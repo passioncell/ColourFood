@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyBg">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <!-- 설치버전-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="2dp"
+            android:background="#fff"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/installed_version"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_setting_user_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="v1.0.0"
+                android:textSize="12dp"/>
+        </LinearLayout>
+
+        <!-- 최신버전 -->
+        <LinearLayout
+            android:id="@+id/ll_setting_latest_version"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="#fff"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/latest_version"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/tv_setting_late_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="v1.0.0"
+                android:textSize="12dp"/>
+        </LinearLayout>
+
+        <!-- 문의사항-->
+        <LinearLayout
+            android:id="@+id/ll_setting_annonce"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="2dp"
+            android:background="#fff"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/icon_notice"
+                android:layout_marginRight="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notice"
+                android:textSize="12dp"/>
+        </LinearLayout>
+
+        <!-- 공지사항-->
+        <LinearLayout
+            android:id="@+id/ll_setting_inquiry"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="2dp"
+            android:background="#fff"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/icon_talk"
+                android:layout_marginRight="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/inquiry"
+                android:textSize="12dp"/>
+        </LinearLayout>
+
+        <!-- 로그아웃 -->
+        <LinearLayout
+            android:id="@+id/ll_setting_logout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="2dp"
+            android:background="#fff"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/icon_logout"
+                android:layout_marginRight="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/logout"
+                android:textSize="12dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
