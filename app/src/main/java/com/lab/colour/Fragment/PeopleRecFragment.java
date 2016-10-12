@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 import com.lab.colour.Activity.DetailActivity;
 import com.lab.colour.Activity.FilterActivity;
-import com.lab.colour.Adapter.RestaurantAdapter;
+import com.lab.colour.Adapter.LvRestaurantAdapter;
 import com.lab.colour.Model.Restaurant;
 import com.lab.colour.R;
 import com.melnykov.fab.FloatingActionButton;
@@ -26,7 +26,7 @@ public class PeopleRecFragment extends Fragment implements AdapterView.OnItemCli
 
     View view;
     private ListView m_ListView;
-    private RestaurantAdapter m_Adapter;
+    private LvRestaurantAdapter m_Adapter;
     public Vector<Restaurant> vector = new Vector<Restaurant>();
 
     @Override
@@ -36,7 +36,7 @@ public class PeopleRecFragment extends Fragment implements AdapterView.OnItemCli
         initFab();
 
         m_ListView = (ListView) view.findViewById(R.id.lv_people);
-        m_Adapter = new RestaurantAdapter(getContext());
+        m_Adapter = new LvRestaurantAdapter(getContext());
         m_ListView.setAdapter(m_Adapter);
         m_ListView.setOnItemClickListener(this);
 

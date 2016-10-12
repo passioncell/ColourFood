@@ -19,14 +19,14 @@ import java.util.Vector;
 /**
  * Created by SeoHyeonBae on 2016-09-19.
  */
-public class RestaurantAdapter extends BaseAdapter {
+public class LvRestaurantAdapter extends BaseAdapter {
 
     private Context mContext = null;
     private Vector<Restaurant> restaurants = new Vector<>();
     CustomHolder holder;
     int nowPosition;
 
-    public RestaurantAdapter(Context mContext) {
+    public LvRestaurantAdapter(Context mContext) {
         super();
         this.mContext = mContext;
     }

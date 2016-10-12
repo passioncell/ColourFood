@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class DetailActivity extends Activity implements View.OnClickListener, Vi
     Button btn_call, btn_map, btn_share;
     ImageButton ib_back;
     TextView tv_image_cnt;
+    RatingBar ratingBar;
 
 
     @Override
@@ -40,10 +42,17 @@ public class DetailActivity extends Activity implements View.OnClickListener, Vi
         btn_share = (Button) findViewById(R.id.bt_detail_share);
         tv_image_cnt = (TextView) findViewById(R.id.tv_detail_image_cnt);
         ib_back = (ImageButton) findViewById(R.id.ib_detail_back);
+        ratingBar = (RatingBar) findViewById(R.id.rb_detail);
+
+
         btn_call.setOnClickListener(this);
         btn_map.setOnClickListener(this);
         btn_share.setOnClickListener(this);
         ib_back.setOnClickListener(this);
+
+        ratingBar.setStepSize((float)0.5);
+        ratingBar.setRating((float)4.5);
+        ratingBar.setIsIndicator(true);
 
 
         mCustomPagerAdapter = new DetailImagePagerAdapter(this);
@@ -104,4 +113,6 @@ public class DetailActivity extends Activity implements View.OnClickListener, Vi
     public void onPageScrollStateChanged(int state) {
 
     }
+
+
 }
