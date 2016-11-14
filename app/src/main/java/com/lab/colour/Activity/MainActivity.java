@@ -10,13 +10,12 @@ import android.support.v7.widget.Toolbar;
 
 import com.lab.colour.Adapter.TabPagerAdapter;
 import com.lab.colour.R;
-import com.lab.colour.Util.GpsManager;
 
 public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    static GpsManager gpsManager;
+//    static GpsManager gpsManager;
     boolean isUserPreferCheck = false;
 
     @Override
@@ -31,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
         setTabMenu();
 
-        gpsManager = new GpsManager(getBaseContext());
-        if( gpsManager.checkEnabled() ){
-            gpsManager.getUserLocationInfo();
-        }
+//        gpsManager = new GpsManager(getBaseContext());
+//        if( gpsManager.checkEnabled() ){
+//            gpsManager.getUserLocationInfo();
+//        }
 
 //        //취향 선호도 조사가 안된 유저에게 취향분석 할것이냐고 요청.
         if(isUserPreferCheck == false){

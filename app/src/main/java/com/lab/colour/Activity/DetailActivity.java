@@ -62,8 +62,6 @@ public class DetailActivity extends Activity implements View.OnClickListener, Vi
         mViewPager.setOnPageChangeListener(this);
 
 
-
-
     }
 
     @Override
@@ -71,7 +69,7 @@ public class DetailActivity extends Activity implements View.OnClickListener, Vi
         switch (v.getId()) {
             case R.id.bt_detail_call:
                 if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(getApplicationContext(),"퍼미션 오류", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"[설정 > 권한]에서 전화하기 기능을 켜주세요.", Toast.LENGTH_SHORT).show();
                     return;
                 }else{
                     Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:010-7160-3434"));
@@ -81,6 +79,7 @@ public class DetailActivity extends Activity implements View.OnClickListener, Vi
             case R.id.bt_detail_map:
                 Intent mapIntent = new Intent(DetailActivity.this, MapActivity.class);
                 startActivity(mapIntent);
+
                 break;
             case R.id.bt_detail_share:
                 Intent msg = new Intent(Intent.ACTION_SEND);

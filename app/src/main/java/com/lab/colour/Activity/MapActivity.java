@@ -1,5 +1,6 @@
 package com.lab.colour.Activity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -8,13 +9,18 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
 import com.lab.colour.R;
 import com.melnykov.fab.FloatingActionButton;
 
 import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
 import net.daum.mf.map.api.MapView;
+
+import java.util.ArrayList;
 
 /**
  * Created by SeoHyeonBae on 2016-09-26.
@@ -35,8 +41,28 @@ public class MapActivity extends Activity implements MapView.MapViewEventListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-        initMapAndComponent();
-        initFab();
+        PermissionListener permissionlistener = new PermissionListener() {
+
+            @Override
+            public void onPermissionGranted() {
+                initMapAndComponent();
+                initFab();
+            }
+
+            @Override
+            public void onPermissionDenied(ArrayList<String> deniedPermissions) {
+                Toast.makeText(getApplicationContext(), "위치권한을 허용하셔야 합니다.\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
+
+            }
+
+        };
+
+        new TedPermission(this)
+                .setPermissionListener(permissionlistener)
+                .setRationaleMessage("지도에 사용자위치 표시를 위해 위치정보를 허용하셔야합니다.")
+                .setDeniedMessage("[설정] > [권한] 에서 권한을 허용할 수 있습니다.")
+                .setPermissions(Manifest.permission.ACCESS_FINE_LOCATION)
+                .check();
 
     }
 
