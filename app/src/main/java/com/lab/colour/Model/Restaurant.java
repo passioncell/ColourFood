@@ -1,22 +1,30 @@
 package com.lab.colour.Model;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 /**
  * Created by SeoHyeonBae on 2016-09-20.
  */
-public class Restaurant {
+public class Restaurant implements Serializable {
 
-    public int primaryKey;
-    public String imageURL;
-    public float rating;
-    public String restaurantName;
-    public String address;
-    public int reviewCnt;
-    public float distance;
-    public boolean isLike;
+    private int primaryKey;
+    private ArrayList<String> imageUrls;
+    private float rating;
+    private String restaurantName;
+    private String address;
+    private int reviewCnt;
+    private float distance;
+    private boolean isLike;
+    private String phoneNumber;
+    private String lat;
+    private String lon;
+    private String tag;
+    private String category;
+    private String detail;
 
     public Restaurant() {
     }
-
 
     public int getPrimaryKey() {
         return primaryKey;
@@ -26,12 +34,12 @@ public class Restaurant {
         this.primaryKey = primaryKey;
     }
 
-    public String getImageURL() {
-        return imageURL;
+    public ArrayList<String> getImageUrls() {
+        return imageUrls;
     }
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
+    public void setImageUrls(ArrayList<String> imageUrls) {
+        this.imageUrls = imageUrls;
     }
 
     public float getRating() {
@@ -50,6 +58,14 @@ public class Restaurant {
         this.restaurantName = restaurantName;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public int getReviewCnt() {
         return reviewCnt;
     }
@@ -66,19 +82,59 @@ public class Restaurant {
         this.distance = distance;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public boolean isLike() {
         return isLike;
     }
 
     public void setLike(boolean like) {
         isLike = like;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    public String getLon() {
+        return lon;
+    }
+
+    public void setLon(String lon) {
+        this.lon = lon;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 }

@@ -25,15 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.small_icon);
+        //toolbar.setNavigationIcon(R.drawable.small_icon); //아이콘
         toolbar.setTitle("컬러푸드");
 
         setTabMenu();
-
-//        gpsManager = new GpsManager(getBaseContext());
-//        if( gpsManager.checkEnabled() ){
-//            gpsManager.getUserLocationInfo();
-//        }
 
 //        //취향 선호도 조사가 안된 유저에게 취향분석 할것이냐고 요청.
         if(isUserPreferCheck == false){

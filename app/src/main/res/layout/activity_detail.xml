@@ -18,6 +18,7 @@
             android:layout_marginLeft="10dp"
             android:layout_gravity="center"/>
         <TextView
+            android:id="@+id/tv_detail_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
@@ -150,17 +151,13 @@
                     android:layout_height="1dp"
                     android:background="#fff"/>
                 <TextView
+                    android:id="@+id/tv_detail_tag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="#강대 #강대후문 #백반 #맛집 #데이트코스"
                     android:textColor="#fff"
                     android:layout_gravity="center"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="#저렴 #한식 #저칼로리 #혜자"
-                    android:textColor="#fff"
-                    android:layout_gravity="center"/>
+
             </LinearLayout>
 
             <!-- 카테고리 섹터 -->
@@ -196,6 +193,7 @@
                     android:layout_height="1dp"
                     android:background="#fff"/>
                 <TextView
+                    android:id="@+id/tv_detail_category"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="한식 | 퓨전식"
@@ -236,15 +234,10 @@
                     android:layout_height="1dp"
                     android:background="#fff"/>
                 <TextView
+                    android:id="@+id/tv_detail_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="영업시간 : 09:00 ~ 24:00"
-                    android:textColor="#fff"
-                    android:layout_gravity="center"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="특이사항 : 주차가능 | 간이쌤"
                     android:textColor="#fff"
                     android:layout_gravity="center"/>
             </LinearLayout>

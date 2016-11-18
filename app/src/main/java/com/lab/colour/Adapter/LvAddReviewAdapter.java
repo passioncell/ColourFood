@@ -102,7 +102,7 @@ public class LvAddReviewAdapter extends BaseAdapter{
 
         //이제 데이터 씌우는 작업.
         //이미지
-        String url = restaurants.get(position).getImageURL();
+        String url = restaurants.get(position).getImageUrls().get(0);
         Glide.with(mContext).load(url).centerCrop().placeholder(R.drawable.sample_food_3).crossFade().into(holder.holder_image);
         holder.holder_rating_bar.setRating(restaurants.get(position).getRating());
         holder.holder_rating.setText(String.valueOf(restaurants.get(position).getRating()));
@@ -111,7 +111,7 @@ public class LvAddReviewAdapter extends BaseAdapter{
         holder.holder_review_cnt.setText(String.valueOf(restaurants.get(position).getReviewCnt()));
         holder.holder_distance.setText(String.valueOf(restaurants.get(position).getDistance())+"km");
 
-        if(restaurants.get(position).isLike){
+        if(restaurants.get(position).isLike()){
             holder.holder_like.setBackground(mContext.getDrawable(R.drawable.icon_heart_on));
         }
 

@@ -3,16 +3,19 @@ package com.lab.colour.Activity;
 import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
+import com.lab.colour.Model.MapModel;
 import com.lab.colour.R;
 import com.melnykov.fab.FloatingActionButton;
 
@@ -34,7 +37,9 @@ public class MapActivity extends Activity implements MapView.MapViewEventListene
     ProgressDialog progressDialog;
     boolean isFindUserTracking = false;
 
+    TextView tv_name;
     ImageButton ib_back;
+    MapModel mapModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,8 +84,17 @@ public class MapActivity extends Activity implements MapView.MapViewEventListene
         mapView.setPOIItemEventListener(this);
         mapView.setMapType(MapView.MapType.Standard);
 
+        Intent intent = getIntent();
+        mapModel= (MapModel) intent.getSerializableExtra("mapObject");
+
+        tv_name = (TextView) findViewById(R.id.tv_map_name);
         ib_back = (ImageButton) findViewById(R.id.ib_map_back);
+
+        tv_name.setText(mapModel.getRestaurantName());
+
         ib_back.setOnClickListener(this);
+
+
     }
 
     private void initFab() {
@@ -98,12 +112,17 @@ public class MapActivity extends Activity implements MapView.MapViewEventListene
     public void onMapViewInitialized(MapView mapView) {
 
 //        //Move
-        MapPoint restaurantPoint = MapPoint.mapPointWithGeoCoord(37.8853782, 127.7362327);
+
+        //37.8733700,127.7444150
+        double lat = Double.parseDouble(mapModel.getLat().trim());
+        double lon = Double.parseDouble(mapModel.getLon().trim());
+        MapPoint restaurantPoint = MapPoint.mapPointWithGeoCoord(lat, lon);
+
         mapView.setMapCenterPoint(restaurantPoint, true);
 
         //Make Marker
         MapPOIItem marker = new MapPOIItem();
-        marker.setItemName("만석식당");
+        marker.setItemName(mapModel.getRestaurantName());
         marker.setTag(0);
         marker.setMapPoint(restaurantPoint);
         marker.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.

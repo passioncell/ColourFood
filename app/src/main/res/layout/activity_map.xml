@@ -28,10 +28,11 @@
             android:layout_marginLeft="10dp"
             android:layout_gravity="center"/>
         <TextView
+            android:id="@+id/tv_map_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="만석식당"
+            android:text="Restaurant Name"
             android:textColor="@color/white"
             android:layout_marginLeft="5dp"/>
     </LinearLayout>

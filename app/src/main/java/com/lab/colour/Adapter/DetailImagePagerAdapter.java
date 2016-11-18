@@ -8,31 +8,36 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.bumptech.glide.Glide;
 import com.lab.colour.R;
 
+import java.util.ArrayList;
+
 /**
- * Created by SeoHyeonBae on 2016-09-25.
+ * Created by SeoHyeonBae on 2016-11-16.
  */
+
 public class DetailImagePagerAdapter extends PagerAdapter {
 
-    int[] mResources = {
-            R.drawable.sample_food_1,
-            R.drawable.sample_food_2,
-            R.drawable.sample_food_3
-    };
+    ArrayList<String> mResources = new ArrayList<String>();
 
     Context mContext;
     LayoutInflater mLayoutInflater;
+
+    public void init(ArrayList<String> imageUrls){
+        mResources = imageUrls;
+    }
 
     public DetailImagePagerAdapter(Context context) {
         mContext = context;
         mLayoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+
     }
 
     @Override
     public int getCount() {
-        return mResources.length;
+        return mResources.size();
     }
 
     @Override
@@ -45,7 +50,7 @@ public class DetailImagePagerAdapter extends PagerAdapter {
         View itemView = mLayoutInflater.inflate(R.layout.pager_detail_image_item, container, false);
 
         ImageView imageView = (ImageView) itemView.findViewById(R.id.imageView);
-        imageView.setImageResource(mResources[position]);
+        Glide.with(mContext).load(mResources.get(position)).placeholder(R.drawable.loading).centerCrop().into(imageView);
 
         container.addView(itemView);
 

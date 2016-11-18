@@ -22,8 +22,6 @@ public class JoinActivity extends Activity implements View.OnClickListener {
     final CharSequence[] bigResidence = { "서울시", "경기도", "부산시", "제주" };
     final CharSequence[] smallResidence = { "은평구", "광진구", "동작구" };
 
-
-
     Button btn_birth, btn_residence, btn_prefer_residence, btn_join;
 
 

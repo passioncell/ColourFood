@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.lab.colour.R;
+import com.lab.colour.Repository.MemberRepository;
 
 /**
  * Created by SeoHyeonBae on 2016-09-19.
@@ -16,6 +17,7 @@ public class LoginActivity extends Activity {
 
     EditText et_id, et_pw;
     Button bt_login, bt_join;
+    MemberRepository memberRepository = new MemberRepository();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
